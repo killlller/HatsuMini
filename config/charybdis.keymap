@@ -17,42 +17,42 @@
             timeout-ms = <50>;
             key-positions = <4 5>; // KP: VB
             bindings = <&mt RBRC LBRC>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3>;
         };
 
         combo_rbrc {
             timeout-ms = <50>;
             key-positions = <6 7>; // KP: NM
             bindings = <&kp RBRC>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3>;
         };
 
         combo_lpar {
             timeout-ms = <50>;
             key-positions = <16 17>; // KP: FG
             bindings = <&mt RPAR LPAR>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3>;
         };
 
         combo_rpar {
             timeout-ms = <50>;
             key-positions = <18 19>;
             bindings = <&kp RPAR>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3>;
         };
 
         combo_lbkt {
             timeout-ms = <50>;
             key-positions = <28 29>; // KP: RT
             bindings = <&mt RBKT LBKT>;  // 可以用CMD+这个单手返回到代码上一个编辑的地方 或者网页返回
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3>;
         };
 
         combo_rbkt {
             timeout-ms = <50>;
             key-positions = <30 31>; // KP: YU
             bindings = <&kp RBKT>;
-            layers = <0 1 2 3 4 5>;
+            layers = <0 1 2 3>;
         };
 
         esc {
@@ -89,6 +89,16 @@
             layers = <0>;
             timeout-ms = <50>;
         };
+
+        RightC {
+            bindings = <&mkp RCLK>;
+            key-positions = <39 40>;
+        };
+
+        input {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <13 14>;
+        };
     };
 
     keymap {
@@ -97,10 +107,10 @@
         default_layer {
             label = "DEFAULT";
             bindings = <
-&lt 2 ESCAPE   &kp Q  &kp D  &kp R  &kp W        &kp B        &kp J      &kp F      &kp U      &kp P    &kp SEMICOLON  &lt 2 DELETE
-&kp BACKSPACE  &kp A  &kp S  &kp H  &kp T        &kp G        &kp Y      &kp N      &kp E      &kp O    &kp I          &kp ENTER
-&kp LSHFT      &kp Z  &kp X  &kp M  &kp C        &kp V        &kp K      &kp L      &kp COMMA  &kp DOT  &kp FSLH       &kp RSHFT
-                             &mo 3  &lt 2 SPACE  &lt 1 SPACE  &mkp LCLK  &mkp RCLK  &mkp MCLK
+&kp TAB        &kp Q  &kp D  &kp R               &kp W      &kp B           &kp J      &kp F      &kp U      &kp P    &kp SEMICOLON  &kp BACKSLASH
+&kp BACKSPACE  &kp A  &kp S  &kp H               &kp T      &kp G           &kp Y      &kp N      &kp E      &kp O    &kp I          &kp ENTER
+&kp LSHFT      &kp Z  &kp X  &kp M               &kp C      &kp V           &kp K      &kp L      &kp COMMA  &kp DOT  &kp FSLH       &lt 1 DELETE
+                             &lt 2 LEFT_CONTROL  &kp SPACE  &lt 1 LEFT_ALT  &mkp LCLK  &mkp RCLK  &mo 3
             >;
         };
 
@@ -119,7 +129,7 @@
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &kp F10  &kp F11  &kp F12  &bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
 &sys_reset    &none         &kp F7   &kp F8   &kp F9   &out OUT_USB  &out OUT_USB  &none         &none         &none         &none         &sys_reset
-&none         &none         &kp F4   &kp F5   &kp F6   &out OUT_BLE  &out OUT_BLE  &none         &none         &none         &none         &none
+&none         &none         &kp F4   &kp F5   &kp F6   &out OUT_BLE  &out OUT_BLE  &kp NUMBER_1  &kp NUMBER_2  &none         &none         &none
                                      &kp F1   &kp F2   &kp F3        &none         &none         &none
             >;
         };
@@ -127,10 +137,10 @@
         hotkey_layer {
             label = "HOTKEY";
             bindings = <
-&none  &none  &none     &kp UP    &none      &none  &none  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none  &none
-&none  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none  &none  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none  &none
-&none  &none  &none     &none     &none      &none  &none  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none  &none
-                        &none     &none      &none  &none  &kp KP_NUMBER_0  &none
+&none  &none  &none     &kp UP    &none      &none  &none            &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none  &kp C_PLAY_PAUSE
+&none  &none  &kp LEFT  &kp DOWN  &kp RIGHT  &none  &none            &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none  &kp C_NEXT
+&none  &none  &none     &none     &none      &none  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &none  &none
+                        &none     &none      &none  &none            &none            &none
             >;
         };
     };
